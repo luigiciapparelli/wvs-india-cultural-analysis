@@ -10,7 +10,7 @@ library(patchwork)
 # Load your processed wave-level data
 # ───────────────────────────────────────────────
 if (!file.exists("Data/wave_summary.csv")) {
-  stop("❌ File 'Data/wave_summary.csv' not found. Run the main analysis first.")
+  stop("File 'Data/wave_summary.csv' not found. Run the main analysis first.")
 }
 wvs_national <- read.csv("Data/wave_summary.csv")
 
@@ -89,4 +89,4 @@ ggsave("Figures/disbelief_timeseries.png", plot_disbelief, width = 8, height = 5
 ggsave("Figures/powerdistance_timeseries.png", plot_pd, width = 8, height = 5, dpi = 300)
 ggsave("Figures/combined_timeseries.png", combined_plot, width = 8, height = 10, dpi = 300)
 
-message("✅ Time-series plots successfully saved to 'Figures/'")
+message("Time-series plots successfully saved to 'Figures/'")
