@@ -22,13 +22,12 @@ The codebase enables:
 
 | File/Folder                  | Description |
 |-----------------------------|-------------|
-| `scripts/preprocess_wvs.R`  | Cleans and harmonizes WVS raw data |
-| `scripts/build_pdi_index.R` | Constructs Power Distance Index using PCA |
+| `scripts/wdi_data_clean.R`  | Cleans and harmonizes WVS raw data |
+| `scripts/build_PD_index.R` | Constructs Power Distance Index using PCA |
 | `scripts/build_disbelief_index.R` | Constructs Disbelief Index via PCA |
 | `scripts/plot_timeseries.R` | Generates cultural trend plots |
-| `scripts/correlation_disbelief_gdp.R` | Correlates indices with economic variables |
-| `outputs/`                  | Time-series and correlation graphs (PNG format) |
-| `data/`                     | Example data (synthetic or anonymized for privacy) |
+| `scripts/correlation_plot.R` | Correlates indices with economic variables |
+| `outputs/..`                  | Time-series and correlation graphs (PNG format) |
 | `requirements.txt`          | Required R packages and versions |
 
 ---
