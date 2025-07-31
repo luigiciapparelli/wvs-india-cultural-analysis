@@ -1,35 +1,60 @@
 # Cultural Values in India – WVS Automation (R)
 
-This repository contains R scripts used in the thesis **"Power Distance, Religiosity, and Economic Development in a Collectivist Society:
-A Cultural Analysis of India"** (2025, University of Bologna) to:
+This repository contains the full analytical framework developed for the thesis:
 
-- Harmonize World Values Survey (WVS) data across waves
-- Perform Principal Component Analysis (PCA) on political trust and religious belief items
-- Construct Power Distance and Disbelief indices
-- Visualize time-series and correlation trends
-- Enable automated replication with future WVS releases
+**"Power Distance, Religiosity, and Economic Development in a Collectivist Society:  
+A Cultural Analysis of India"**  
+*(2025, Second Cycle Degree in Service Management, University of Bologna)*
 
-## Structure
+The codebase enables:
 
-- `preprocess_wvs.R`: Cleans and harmonizes WVS data across waves
-- `pdi_index_pca.R`: Constructs a Power Distance Index using PCA
-- `disbelief_index_pca.R`: Builds a Disbelief Index using PCA
-- `timeseries_plots.R`: Produces line plots over time
-- `correlation_plots.R`: Scatterplots with GDP and cultural indices
+- Harmonization of World Values Survey (WVS) data across multiple waves (1990–2020)
+- Principal Component Analysis (PCA) on political trust and religious belief items
+- Construction of two original indices:
+  - **Power Distance Index (PDI)** – based on hierarchical authority perceptions
+  - **Disbelief Index (DI)** – reflecting secularization and religious skepticism
+- Time-series and correlation plotting to visualize cultural evolution
+- Modular automation designed for future WVS data integration (e.g., Wave 8+)
 
-## Data
+---
 
-Located in https://www.worldvaluessurvey.org/WVSContents.jsp
+## Repository Structure
+
+| File/Folder                  | Description |
+|-----------------------------|-------------|
+| `scripts/preprocess_wvs.R`  | Cleans and harmonizes WVS raw data |
+| `scripts/build_pdi_index.R` | Constructs Power Distance Index using PCA |
+| `scripts/build_disbelief_index.R` | Constructs Disbelief Index via PCA |
+| `scripts/plot_timeseries.R` | Generates cultural trend plots |
+| `scripts/correlation_disbelief_gdp.R` | Correlates indices with economic variables |
+| `outputs/`                  | Time-series and correlation graphs (PNG format) |
+| `data/`                     | Example data (synthetic or anonymized for privacy) |
+| `requirements.txt`          | Required R packages and versions |
+
+---
+
+## Data Sources
+
+WVS raw data must be downloaded separately from:  
+[https://www.worldvaluessurvey.org/WVSContents.jsp](https://www.worldvaluessurvey.org/WVSContents.jsp)
+
+To protect licensing restrictions, only demo files or minimal samples are provided in `/data/`.
+
+---
 
 ## Outputs
 
-Graphs saved as .png files.
+Final graphs are saved in `/outputs/`, including:
+- Time-series of Power Distance and Disbelief indices
+- Correlations with GDP per capita
+- Cross-wave comparison of cultural dimensions
+
+---
 
 ## Requirements
 
-To ensure compatibility read requirements.txt
-
-## Citation
-
-> Ciapparelli, L. (2025). *Power Distance, Religiosity, and Economic Development in a Collectivist Society:
-A Cultural Analysis of India*. Second Cycle Degree/Two Year Master in Service Management, University of Bologna. [GitHub Repository](https://github.com/luigiciapparelli/wvs-india-cultural-analysis)
+To replicate results:
+- R ≥ 4.0
+- Install packages listed in `requirements.txt` using:
+```r
+install.packages(readLines("requirements.txt"))
